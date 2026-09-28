@@ -1,0 +1,249 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1150 780" width="100%" height="100%" style="background-color: #fafbfc; font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Arrow marker -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#4b5563" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#0284c7" />
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#7c3aed" />
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#d97706" />
+    </marker>
+    
+    <!-- Filter for subtle sketchy drop shadow -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="3" dy="4" stdDeviation="2" flood-color="#1f2937" flood-opacity="0.08" />
+    </filter>
+  </defs>
+
+  <!-- Title & Subtitle banner -->
+  <g transform="translate(40, 25)">
+    <rect x="0" y="0" width="1070" height="52" rx="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="2" filter="url(#shadow)" />
+    <text x="24" y="32" font-size="20" font-weight="700" fill="#111827">System Architecture: Document RAG Platform &amp; External Agent Integration</text>
+    <rect x="880" y="14" width="165" height="24" rx="12" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5" />
+    <text x="962" y="30" font-size="11" font-weight="600" fill="#b45309" text-anchor="middle">EXCALIDRAW STYLE</text>
+  </g>
+
+  <!-- ==================== 1. USER & CLIENT LAYER ==================== -->
+  <g transform="translate(40, 95)">
+    <!-- Container -->
+    <rect x="0" y="0" width="280" height="645" rx="18" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="6,6" />
+    <rect x="18" y="-12" width="155" height="24" rx="8" fill="#8b5cf6" />
+    <text x="95" y="4" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">CLIENT &amp; USER LAYER</text>
+
+    <!-- User Node -->
+    <rect x="25" y="30" width="230" height="85" rx="12" fill="#ffffff" stroke="#6d28d9" stroke-width="2" filter="url(#shadow)" />
+    <circle cx="55" cy="72" r="18" fill="#ede9fe" stroke="#7c3aed" stroke-width="2" />
+    <path d="M 47 78 A 8 8 0 0 1 63 78 Z" fill="#7c3aed" />
+    <circle cx="55" cy="67" r="5" fill="#7c3aed" />
+    <text x="90" y="65" font-size="15" font-weight="700" fill="#1f2937">User / Operator</text>
+    <text x="90" y="83" font-size="11" fill="#6b7280">Browser &amp; Chat Commands</text>
+
+    <!-- Next.js Frontend Box -->
+    <rect x="25" y="165" width="230" height="200" rx="14" fill="#ffffff" stroke="#7c3aed" stroke-width="2.5" filter="url(#shadow)" />
+    <rect x="38" y="180" width="85" height="20" rx="6" fill="#ede9fe" />
+    <text x="80" y="194" font-size="10" font-weight="700" fill="#6d28d9" text-anchor="middle">FRONTEND</text>
+    <text x="38" y="222" font-size="16" font-weight="700" fill="#111827">Next.js 15 UI</text>
+    <text x="38" y="242" font-size="12" fill="#4b5563">• Multi-session Chat Interface</text>
+    <text x="38" y="262" font-size="12" fill="#4b5563">• PDF Upload &amp; Cloudinary Sync</text>
+    <text x="38" y="282" font-size="12" fill="#4b5563">• Markdown &amp; Stream Rendering</text>
+    <text x="38" y="302" font-size="12" fill="#4b5563">• Configurable API Endpoints</text>
+    <rect x="38" y="325" width="204" height="26" rx="6" fill="#f3f4f6" stroke="#d1d5db" />
+    <text x="140" y="342" font-size="11" font-weight="600" fill="#374151" text-anchor="middle">Port: 3000 (React / Tailwind)</text>
+
+    <!-- Direct User Query vs Agent Mode Explanatory Card -->
+    <rect x="25" y="415" width="230" height="200" rx="14" fill="#ffffff" stroke="#c4b5fd" stroke-width="1.8" filter="url(#shadow)" />
+    <text x="40" y="442" font-size="13" font-weight="700" fill="#4c1d95">Dual Interaction Modes:</text>
+    <rect x="38" y="458" width="204" height="60" rx="8" fill="#eff6ff" stroke="#93c5fd" />
+    <text x="48" y="476" font-size="11" font-weight="700" fill="#1d4ed8">Mode A: Direct RAG</text>
+    <text x="48" y="493" font-size="10" fill="#3b82f6">UI talks straight to Flask API</text>
+    <text x="48" y="508" font-size="10" fill="#3b82f6">for instant doc Q&amp;A</text>
+
+    <rect x="38" y="530" width="204" height="68" rx="8" fill="#fef3c7" stroke="#fcd34d" />
+    <text x="48" y="548" font-size="11" font-weight="700" fill="#b45309">Mode B: External Agent</text>
+    <text x="48" y="565" font-size="10" fill="#92400e">Agent calls RAG as a tool</text>
+    <text x="48" y="580" font-size="10" fill="#92400e">for multi-step research tasks</text>
+  </g>
+
+  <!-- ==================== 2. EXTERNAL AGENT LAYER ==================== -->
+  <g transform="translate(350, 95)">
+    <!-- Container -->
+    <rect x="0" y="0" width="370" height="310" rx="18" fill="#fffbeb" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,6" />
+    <rect x="18" y="-12" width="190" height="24" rx="8" fill="#f59e0b" />
+    <text x="113" y="4" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">EXTERNAL AGENT LAYER</text>
+
+    <!-- Autonomous Agent Brain -->
+    <rect x="25" y="28" width="320" height="135" rx="14" fill="#ffffff" stroke="#d97706" stroke-width="2.5" filter="url(#shadow)" />
+    <rect x="38" y="42" width="150" height="20" rx="6" fill="#fef3c7" />
+    <text x="113" y="56" font-size="10" font-weight="700" fill="#92400e" text-anchor="middle">AUTONOMOUS ORCHESTRATOR</text>
+    <text x="38" y="85" font-size="16" font-weight="700" fill="#78350f">Autonomous Agent Brain</text>
+    <text x="38" y="105" font-size="11" fill="#451a03">LangGraph / CrewAI / AutoGen / ReAct Loop</text>
+    
+    <g transform="translate(38, 116)">
+      <rect x="0" y="0" width="88" height="24" rx="6" fill="#fef9c3" stroke="#eab308" />
+      <text x="44" y="16" font-size="10" font-weight="600" fill="#854d0e" text-anchor="middle">Planner</text>
+      
+      <rect x="98" y="0" width="88" height="24" rx="6" fill="#fef9c3" stroke="#eab308" />
+      <text x="142" y="16" font-size="10" font-weight="600" fill="#854d0e" text-anchor="middle">Memory</text>
+      
+      <rect x="196" y="0" width="98" height="24" rx="6" fill="#fef9c3" stroke="#eab308" />
+      <text x="245" y="16" font-size="10" font-weight="600" fill="#854d0e" text-anchor="middle">Self-Correction</text>
+    </g>
+
+    <!-- Multi-Tool Dispatcher Grid -->
+    <g transform="translate(25, 180)">
+      <!-- Tool 1: RAG Tool (Primary) -->
+      <rect x="0" y="0" width="150" height="105" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" filter="url(#shadow)" />
+      <text x="12" y="24" font-size="12" font-weight="700" fill="#0369a1">Tool: Doc RAG</text>
+      <text x="12" y="42" font-size="10" fill="#0284c7">POST /question</text>
+      <text x="12" y="58" font-size="10" fill="#0284c7">POST /pdf</text>
+      <rect x="10" y="70" width="130" height="22" rx="5" fill="#ffffff" />
+      <text x="75" y="85" font-size="9" font-weight="700" fill="#0284c7" text-anchor="middle">Grounding &amp; Facts</text>
+
+      <!-- Tool 2: Web Search -->
+      <rect x="165" y="0" width="75" height="105" rx="10" fill="#ffffff" stroke="#9ca3af" stroke-width="1.5" />
+      <text x="202" y="28" font-size="10" font-weight="700" fill="#374151" text-anchor="middle">Web Search</text>
+      <text x="202" y="50" font-size="9" fill="#6b7280" text-anchor="middle">Tavily /</text>
+      <text x="202" y="66" font-size="9" fill="#6b7280" text-anchor="middle">Google</text>
+      <rect x="173" y="76" width="58" height="18" rx="4" fill="#f3f4f6" />
+      <text x="202" y="89" font-size="8" fill="#4b5563" text-anchor="middle">Live News</text>
+
+      <!-- Tool 3: DB / SQL -->
+      <rect x="250" y="0" width="70" height="105" rx="10" fill="#ffffff" stroke="#9ca3af" stroke-width="1.5" />
+      <text x="285" y="28" font-size="10" font-weight="700" fill="#374151" text-anchor="middle">SQL DB</text>
+      <text x="285" y="50" font-size="9" fill="#6b7280" text-anchor="middle">PostgreSQL</text>
+      <text x="285" y="66" font-size="9" fill="#6b7280" text-anchor="middle">/ CRM</text>
+      <rect x="256" y="76" width="58" height="18" rx="4" fill="#f3f4f6" />
+      <text x="285" y="89" font-size="8" fill="#4b5563" text-anchor="middle">Internal Data</text>
+    </g>
+  </g>
+
+  <!-- ==================== 3. FLASK RAG SERVICE LAYER ==================== -->
+  <g transform="translate(350, 435)">
+    <!-- Container -->
+    <rect x="0" y="0" width="370" height="305" rx="18" fill="#f0f9ff" stroke="#0284c7" stroke-width="2" stroke-dasharray="6,6" />
+    <rect x="18" y="-12" width="210" height="24" rx="8" fill="#0284c7" />
+    <text x="123" y="4" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">RAG MICROSERVICE (ques_api)</text>
+
+    <!-- Main Flask Card -->
+    <rect x="25" y="25" width="320" height="255" rx="14" fill="#ffffff" stroke="#0369a1" stroke-width="2" filter="url(#shadow)" />
+    <text x="45" y="55" font-size="16" font-weight="700" fill="#0f172a">Flask Core Engine (app.py)</text>
+    <text x="45" y="73" font-size="11" fill="#64748b">Port 5000 • CORS Enabled REST Service</text>
+
+    <!-- Internal sub-blocks -->
+    <g transform="translate(40, 88)">
+      <!-- PDF Ingestion -->
+      <rect x="0" y="0" width="135" height="60" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+      <text x="10" y="20" font-size="11" font-weight="700" fill="#334155">PDF Ingestion</text>
+      <text x="10" y="36" font-size="10" fill="#64748b">PyPDF2 + Chunker</text>
+      <text x="10" y="50" font-size="9" fill="#0284c7">1200 chunk / 200 ovr</text>
+
+      <!-- Embedder -->
+      <rect x="145" y="0" width="135" height="60" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+      <text x="155" y="20" font-size="11" font-weight="700" fill="#334155">Nomic Embed</text>
+      <text x="155" y="36" font-size="10" fill="#64748b">256-dim Vectors</text>
+      <text x="155" y="50" font-size="9" fill="#16a34a">MD5 hash fallback</text>
+
+      <!-- Pinecone Retriever -->
+      <rect x="0" y="70" width="135" height="70" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+      <text x="10" y="90" font-size="11" font-weight="700" fill="#334155">Vector Retriever</text>
+      <text x="10" y="106" font-size="10" fill="#64748b">Top-6 Cosine Match</text>
+      <text x="10" y="122" font-size="9" fill="#7c3aed">Metadata Filter</text>
+
+      <!-- Groq Prompt Formatter -->
+      <rect x="145" y="70" width="135" height="70" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+      <text x="155" y="90" font-size="11" font-weight="700" fill="#334155">Groq Generator</text>
+      <text x="155" y="106" font-size="10" fill="#64748b">LLaMA 3.3 70B</text>
+      <text x="155" y="122" font-size="9" fill="#d97706">Streaming tokens</text>
+    </g>
+
+    <!-- API endpoints footer pill -->
+    <rect x="40" y="245" width="290" height="24" rx="6" fill="#f1f5f9" />
+    <text x="185" y="261" font-size="10" font-weight="600" fill="#475569" text-anchor="middle">Endpoints: /pdf  •  /question  •  /reset  •  /health</text>
+  </g>
+
+  <!-- ==================== 4. EXTERNAL CLOUD SERVICES ==================== -->
+  <g transform="translate(770, 95)">
+    <!-- Container -->
+    <rect x="0" y="0" width="340" height="645" rx="18" fill="#ecfdf5" stroke="#10b981" stroke-width="2" stroke-dasharray="6,6" />
+    <rect x="18" y="-12" width="200" height="24" rx="8" fill="#10b981" />
+    <text x="118" y="4" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">CLOUD &amp; DATA SERVICES</text>
+
+    <!-- Pinecone DB Card -->
+    <rect x="25" y="40" width="290" height="150" rx="14" fill="#ffffff" stroke="#059669" stroke-width="2" filter="url(#shadow)" />
+    <circle cx="58" cy="75" r="16" fill="#d1fae5" stroke="#10b981" stroke-width="2" />
+    <path d="M 50 75 L 58 67 L 66 75 L 58 83 Z" fill="#059669" />
+    <text x="88" y="72" font-size="16" font-weight="700" fill="#065f46">Pinecone Vector DB</text>
+    <text x="88" y="90" font-size="11" fill="#047857">Serverless Vector Index: "lang"</text>
+    <rect x="40" y="112" width="260" height="60" rx="8" fill="#f0fdf4" stroke="#bbf7d0" />
+    <text x="50" y="132" font-size="11" fill="#15803d">• 256-dimensional vector space</text>
+    <text x="50" y="152" font-size="11" fill="#15803d">• Metadata payload: {"text": chunk}</text>
+
+    <!-- Groq Cloud Card -->
+    <rect x="25" y="225" width="290" height="160" rx="14" fill="#ffffff" stroke="#ea580c" stroke-width="2" filter="url(#shadow)" />
+    <circle cx="58" cy="260" r="16" fill="#ffedd5" stroke="#f97316" stroke-width="2" />
+    <text x="58" y="265" font-size="13" font-weight="900" fill="#ea580c" text-anchor="middle">G</text>
+    <text x="88" y="258" font-size="16" font-weight="700" fill="#9a3412">Groq LPU Cloud</text>
+    <text x="88" y="276" font-size="11" fill="#c2410c">Low-latency LLM Inference</text>
+    <rect x="40" y="298" width="260" height="70" rx="8" fill="#fff7ed" stroke="#fed7aa" />
+    <text x="50" y="320" font-size="11" fill="#9a3412">• Model: llama-3.3-70b-versatile</text>
+    <text x="50" y="338" font-size="11" fill="#9a3412">• Temperature: 0.7 | max_tokens: 1024</text>
+    <text x="50" y="356" font-size="11" fill="#9a3412">• Real-time token stream</text>
+
+    <!-- Storage Card -->
+    <rect x="25" y="420" width="290" height="120" rx="14" fill="#ffffff" stroke="#2563eb" stroke-width="2" filter="url(#shadow)" />
+    <circle cx="58" cy="455" r="16" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" />
+    <path d="M 52 460 A 6 6 0 0 1 64 460 A 4 4 0 0 1 68 463 L 48 463 Z" fill="#2563eb" />
+    <text x="88" y="452" font-size="15" font-weight="700" fill="#1e40af">Cloudinary / Storage</text>
+    <text x="88" y="470" font-size="11" fill="#3b82f6">Remote PDF Asset Bucket</text>
+    <rect x="40" y="488" width="260" height="38" rx="8" fill="#eff6ff" stroke="#bfdbfe" />
+    <text x="50" y="511" font-size="11" fill="#1e40af">• Stores uploaded PDFs &amp; generates URLs</text>
+
+    <!-- Nomic API Service Card -->
+    <rect x="25" y="565" width="290" height="95" rx="14" fill="#ffffff" stroke="#0891b2" stroke-width="2" filter="url(#shadow)" />
+    <text x="45" y="595" font-size="14" font-weight="700" fill="#0e7490">Nomic Atlas Embeddings</text>
+    <text x="45" y="615" font-size="11" fill="#155e75">Model: nomic-embed-text-v1.5 (256 dims)</text>
+    <text x="45" y="635" font-size="11" fill="#0891b2">Supports document &amp; query tasks</text>
+  </g>
+
+  <!-- ==================== CONNECTING FLOW ARROWS ==================== -->
+  
+  <!-- Flow 1: User to Next.js UI -->
+  <path d="M 155 180 L 155 245" stroke="#7c3aed" stroke-width="2" marker-end="url(#arrow-purple)" />
+
+  <!-- Flow 2: User / Next.js to External Agent -->
+  <path d="M 255 230 C 300 230, 310 170, 375 170" fill="none" stroke="#d97706" stroke-width="2.5" stroke-dasharray="4,4" marker-end="url(#arrow-amber)" />
+  <rect x="270" y="175" width="85" height="20" rx="4" fill="#fef3c7" stroke="#f59e0b" />
+  <text x="312" y="189" font-size="9" font-weight="700" fill="#92400e" text-anchor="middle">Complex Goal</text>
+
+  <!-- Flow 3: Next.js Direct to Flask API -->
+  <path d="M 255 315 C 310 315, 300 520, 375 520" fill="none" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrow-purple)" />
+  <rect x="270" y="380" width="85" height="20" rx="4" fill="#ede9fe" stroke="#8b5cf6" />
+  <text x="312" y="394" font-size="9" font-weight="700" fill="#6d28d9" text-anchor="middle">Direct Query</text>
+
+  <!-- Flow 4: External Agent Doc RAG Tool to Flask API -->
+  <path d="M 450 380 L 450 460" fill="none" stroke="#0284c7" stroke-width="3" marker-end="url(#arrow-blue)" />
+  <rect x="458" y="405" width="115" height="22" rx="4" fill="#e0f2fe" stroke="#0284c7" />
+  <text x="515" y="420" font-size="9" font-weight="700" fill="#0369a1" text-anchor="middle">Tool Call: /question</text>
+
+  <!-- Flow 5: Flask API to Pinecone -->
+  <path d="M 720 540 C 745 540, 750 170, 795 170" fill="none" stroke="#059669" stroke-width="2" marker-end="url(#arrow)" />
+  <rect x="715" y="310" width="75" height="20" rx="4" fill="#d1fae5" stroke="#10b981" />
+  <text x="752" y="324" font-size="9" font-weight="700" fill="#065f46" text-anchor="middle">Top-6 Query</text>
+
+  <!-- Flow 6: Flask API to Groq Cloud -->
+  <path d="M 720 590 C 745 590, 750 340, 795 340" fill="none" stroke="#ea580c" stroke-width="2" marker-end="url(#arrow)" />
+  <rect x="715" y="435" width="75" height="20" rx="4" fill="#ffedd5" stroke="#f97316" />
+  <text x="752" y="449" font-size="9" font-weight="700" fill="#9a3412" text-anchor="middle">Chat Stream</text>
+
+  <!-- Flow 7: Flask API to Cloudinary (download_pdf) -->
+  <path d="M 720 635 C 750 635, 760 520, 795 520" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)" />
+
+  <!-- Flow 8: Flask API to Nomic API -->
+  <path d="M 720 670 L 795 670" fill="none" stroke="#0891b2" stroke-width="2" marker-end="url(#arrow)" />
+
+</svg>

@@ -1,0 +1,195 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #faf8f5;
+    --bg-card: #ffffff;
+    --bg-sidebar: #f3f0e9;
+    --bg-chat-user: #f0ece1;
+    --bg-chat-ai: #ffffff;
+    --border-color: #e5e0d3;
+    --border-color-hover: #d1c9b8;
+    --text-primary: #2b2a27;
+    --text-secondary: #6e6c64;
+    --text-muted: #9e9a90;
+    --accent: #d97706;
+    --accent-hover: #b45309;
+    --accent-light: #fef3c7;
+    --claude-orange: #da7756;
+    --claude-bg-dark: #1b1b19;
+  }
+
+  .dark {
+    --bg-main: #181816;
+    --bg-card: #22221f;
+    --bg-sidebar: #1e1e1b;
+    --bg-chat-user: #2c2b27;
+    --bg-chat-ai: #22221f;
+    --border-color: #33322d;
+    --border-color-hover: #47453f;
+    --text-primary: #ecebe6;
+    --text-secondary: #a3a199;
+    --text-muted: #6e6c64;
+    --accent: #da7756;
+    --accent-hover: #e08b6e;
+    --accent-light: #3d2b24;
+    --claude-orange: #da7756;
+    --claude-bg-dark: #181816;
+  }
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: var(--font-outfit), var(--font-jakarta), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-size: 14px;
+}
+
+/* Unique Brand Typography */
+.font-brand {
+  font-family: var(--font-outfit), sans-serif;
+  letter-spacing: -0.015em;
+}
+
+.font-serif-claude {
+  font-family: var(--font-outfit), "Georgia", serif;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-color-hover);
+}
+
+/* Animations */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.96); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes scaleIn {
+  0% { opacity: 0; transform: scale(0.95) translateY(10px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 15px rgba(218, 119, 86, 0.2); }
+  50% { box-shadow: 0 0 25px rgba(218, 119, 86, 0.45); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Markdown styling in messages */
+.prose {
+  color: var(--text-primary);
+  max-width: none;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.prose p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-top: 1em;
+  margin-bottom: 0.4em;
+}
+
+.prose code {
+  background-color: rgba(150, 150, 150, 0.15);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.875em;
+  font-family: monospace;
+}
+
+.prose pre {
+  background-color: #1a1a1a;
+  color: #f8f8f2;
+  padding: 1em;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+.prose pre code {
+  background-color: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+.prose ul, .prose ol {
+  padding-left: 1.4em;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+}
+
+.prose li {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+
+.prose blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 0.8em;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+.prose th, .prose td {
+  border: 1px solid var(--border-color);
+  padding: 0.5em 0.75em;
+  text-align: left;
+}
+
+.prose th {
+  background-color: rgba(150, 150, 150, 0.1);
+  font-weight: 600;
+}
